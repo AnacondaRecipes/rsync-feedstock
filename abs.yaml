@@ -1,4 +1,0 @@
-aggregate_check: False
-
-channels:
-  - https://staging.continuum.io/prefect/fs/popt-feedstock/pr2/c3cc730
