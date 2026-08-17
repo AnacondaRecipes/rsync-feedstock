@@ -22,11 +22,11 @@ requirements:
     - {{ compiler('cxx') }}  # [osx and arm64]
     - make
   host:
-    - libiconv 1.16
-    - lz4-c 1.9
+    - libiconv {{ libiconv }}
+    - lz4-c {{ lz4_c }}
     - openssl {{ openssl }}
-    - popt 1.19
-    - xxhash 0.8.0
+    - popt {{ popt }}
+    - xxhash {{ xxhash }}
     - zlib {{ zlib }}
     - zstd {{ zstd }}
   run:
