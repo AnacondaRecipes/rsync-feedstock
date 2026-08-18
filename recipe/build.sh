@@ -17,8 +17,8 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
         # Skip failed tests on arm64
         # ERROR: dir/file failed verification -- update discarded.
         # test 1: update through directory symlink failed
-        make tls trimslash t_unsafe t_chmod_secure t_secure_relpath wildtest getgroups getfsdev
-        TESTS=$(cd testsuite && ls *.test | sed 's/\.test$//' | grep -v '^chmod-symlink-race$' | grep -v '^symlink-dirlink-basis$' | tr '\n' ' ')
+        make tls trimslash t_unsafe t_chmod_secure t_secure_relpath wildtest getgroups getfsdev t_rename_secure t_symlink_secure
+        TESTS=$(cd testsuite && ls *_test.py | sed 's/_test\.py$//' | grep -v '^chmod-symlink-race$' | grep -v '^symlink-dirlink-basis$' | tr '\n' ' ')
         ./runtests.py --rsync-bin="$(pwd)/rsync" $TESTS
     else
         make check
