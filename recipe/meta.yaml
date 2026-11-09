@@ -1,13 +1,13 @@
 {% set name = "rsync" %}
-{% set version = "3.5.0" %}
+{% set version = "3.5.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   - url: https://www.samba.org/ftp/{{ name }}/src/{{ name }}-{{ version }}.tar.gz
-    sha256: c7ffd1ef653e99540f661e47cb00b7f9cad1ee6b972399b16f93d672656e0d33
+    sha256: a10d591825251e070f74c98df3daad195def4ed81b4a2de16169026aea33f6c8
 
 build:
   number: 0
@@ -23,6 +23,7 @@ requirements:
     - make
   host:
     - libiconv {{ libiconv }}
+    - libidn2 {{ libidn2 }}
     - lz4-c {{ lz4_c }}
     - openssl {{ openssl }}
     - popt {{ popt }}
@@ -42,6 +43,7 @@ requirements:
 test:
   commands:
     - rsync --help
+    - rsync --version
 
 about:
   home: https://rsync.samba.org/
