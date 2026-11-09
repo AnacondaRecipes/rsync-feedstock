@@ -23,6 +23,7 @@ requirements:
     - make
   host:
     - libiconv {{ libiconv }}
+    - libidn2 {{ libidn2 }}
     - lz4-c {{ lz4_c }}
     - openssl {{ openssl }}
     - popt {{ popt }}
