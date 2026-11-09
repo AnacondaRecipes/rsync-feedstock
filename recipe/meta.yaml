@@ -32,6 +32,7 @@ requirements:
   run:
     # all bounds through run_exports.
     - libiconv
+    - libidn2
     - lz4-c
     - openssl
     - popt
@@ -42,6 +43,7 @@ requirements:
 test:
   commands:
     - rsync --help
+    - rsync --version
 
 about:
   home: https://rsync.samba.org/
